@@ -1,0 +1,53 @@
+<div class="container">
+    <!--For Form the name attribute is must-->
+    <!--Bound FormGroup to [formGroup] of <form></form> tag-->
+    <form name="frmPrd" [formGroup]="frmPrd" (ngSubmit)="save()">
+        <div class="form-group">
+            <label>Product Id</label>
+            <input type="text" formControlName="ProductId" name="ProductId" class="form-control">
+            <div class="alert alert-danger" *ngIf="frmPrd.controls.ProductId.dirty&&!frmPrd.controls.ProductId.valid">
+                <p *ngIf="frmPrd.controls.ProductId.errors.required">Product Id is Must</p>
+                <p *ngIf="frmPrd.controls.ProductId.errors.minlength">Product Id Must be min 2 digts</p>
+                <p *ngIf="frmPrd.controls.ProductId.errors.maxlength">Product Id Must be max 6 digits</p>
+                <p *ngIf="frmPrd.controls.ProductId.errors.pattern">Product Id Must be numeric</p>
+                <p *ngIf="frmPrd.controls.ProductId.errors.fool">Product Id muust even</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" formControlName="ProductName" name="ProductName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Category Name</label>
+            <select type="text" formControlName="CategoryName" name="CategoryName" class="form-control">
+        <!--The Structural Directive to generate the options for select element-->
+        <option *ngFor="let c of categories" value="{{c}}">{{c}}</option>
+      </select>
+        </div>
+        <div class="form-group">
+            <label>Product Price</label>
+            <input type="text" formControlName="Price" name="Price" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="button" value="New" class="btn btn-warning" (click)="clear()">
+            <input type="submit" value="Save" class="btn btn-success">
+        </div>
+    </form>
+</div>
+<br>
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th *ngFor="let h of tableHeaders">{{h}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Generating Product columns for every property from Product object -->
+            <tr *ngFor="let p of products" (click)="selectProduct(p)">
+                <td *ngFor="let h of tableHeaders">{{p[h]}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
