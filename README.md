@@ -47,6 +47,20 @@ Agular Application Development
                   4. HttpContext
       2. Disconnected Communication across Components
 3. Component Communication
+   1. Components Know to each other with physical parent-child relationship
+      1. The Parent Component can render the child component using child componen's selector in HTML template of parent component
+      2. The parent can pass data to child provided the child component must have the public get/set property decorated with @Input() decorator.
+      3. The @Input() decorated property can now be used for Property-Binding 
+         1. Child component can also emit data to parent using an 'EventEmitter<T>' class
+         2. Here T is the data type that will be emitted to parent
+         3. EventEmitter<T> has 'emit()' method to emit data to parent when an event occured in child
+         4. To Emit to parent, the EventEmitter type declaration must be decorated with @Output()
+         5. The Parent Component must subscribe to the EventEmiiter of Child using Event-Binding and the emitted data will be received from child using $event 
+   2. Disconnected communication across components using services
+      1. Sender and receiver component must know the service using DI
+      2. Service is responsible to maintain data from sender component
+         1. Service define a public method that will be accessed by sender component to pass the data
+         2. Service must define an EventEmitter<T> that will be subscribe by the receiver component to receive data when sender send it.   
 4. Routing
 5. Directives
    1. Three (3) typef of Directives

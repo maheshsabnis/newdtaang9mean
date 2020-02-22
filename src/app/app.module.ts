@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductReactiveFormComponent } from './components/productreactiveformcomponent/app.productreactiveform.component';
 import { HttpServiceComponent } from './components/servicecomponent/app.httpservice.component';
+import { CatMasterComponent } from './components/masterdetails/app.catmaster.component';
+import { PrdDetailsComponent } from './components/masterdetails/app.prddetails.component';
+import { CatSenderComponent } from './components/masterdetailsservices/app.catsender.component';
+import { PrdReceiverComponent } from './components/masterdetailsservices/app.prdreceiver.component';
 
 
 // imports: of the type array, used to import and load stabdard angular module and other
@@ -22,13 +26,15 @@ import { HttpServiceComponent } from './components/servicecomponent/app.httpserv
 // declaration in browser
 @NgModule({
   declarations: [
-    AppComponent, ProductReactiveFormComponent, HttpServiceComponent
+    AppComponent, ProductReactiveFormComponent, HttpServiceComponent,
+    CatMasterComponent, PrdDetailsComponent,
+    CatSenderComponent, PrdReceiverComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule,
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [HttpServiceComponent]
+  bootstrap: [CatSenderComponent, PrdReceiverComponent]
 })
 export class AppModule { }
