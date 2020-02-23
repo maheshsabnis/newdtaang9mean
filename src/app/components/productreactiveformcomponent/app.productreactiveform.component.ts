@@ -65,8 +65,8 @@ export class ProductReactiveFormComponent implements OnInit {
     this.product = new Product(0, '', '', 0);
   }
 
-  selectProduct(prd: Product): void {
-
+  selectProduct(prd: any): void {
+    console.log(prd);
     this.product  = Object.assign({}, prd);
     // assigning the selected product to the frmPrd value
     this.frmPrd.setValue(this.product);

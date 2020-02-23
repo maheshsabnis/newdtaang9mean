@@ -62,6 +62,7 @@ Agular Application Development
          1. Service define a public method that will be accessed by sender component to pass the data
          2. Service must define an EventEmitter<T> that will be subscribe by the receiver component to receive data when sender send it.   
 4. Routing
+   1. 
 5. Directives
    1. Three (3) typef of Directives
    2. Component Directive
@@ -74,3 +75,10 @@ Agular Application Development
    4. Attribute Directives
       1. Used to change behavior of DOM elements based on attribute
          1. ngModel
+      2. Custom Attribnute Directives can be used as attribute for HTML elements for property binding to set behavior of HTML Element
+         1. Public properties decorated with @Input to accept data
+         2. Methods for Logic of Directive
+         3. Methods those will Host events to activate the directive and thses methods will be decorated with @HostListener()
+            1. @HostListener('<DOM Event>') function myFx(){...}
+         4. The ElementRef the class used to refer DOM Element for applying Directive
+         5. The Renderer / Renderer2  class to define rendering of ElementRef when directive is activated

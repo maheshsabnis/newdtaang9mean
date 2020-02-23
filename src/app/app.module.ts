@@ -10,6 +10,8 @@ import { CatMasterComponent } from './components/masterdetails/app.catmaster.com
 import { PrdDetailsComponent } from './components/masterdetails/app.prddetails.component';
 import { CatSenderComponent } from './components/masterdetailsservices/app.catsender.component';
 import { PrdReceiverComponent } from './components/masterdetailsservices/app.prdreceiver.component';
+import { DataGridComponent } from './directives/app.dynamictablecomponent.directive';
+import { ColorDirective } from './directives/app.color.directive';
 
 
 // imports: of the type array, used to import and load stabdard angular module and other
@@ -28,13 +30,14 @@ import { PrdReceiverComponent } from './components/masterdetailsservices/app.prd
   declarations: [
     AppComponent, ProductReactiveFormComponent, HttpServiceComponent,
     CatMasterComponent, PrdDetailsComponent,
-    CatSenderComponent, PrdReceiverComponent
+    CatSenderComponent, PrdReceiverComponent,
+    DataGridComponent, ColorDirective
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule,
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [CatSenderComponent, PrdReceiverComponent]
+  bootstrap: [ProductReactiveFormComponent]
 })
 export class AppModule { }

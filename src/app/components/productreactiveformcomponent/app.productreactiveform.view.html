@@ -36,18 +36,18 @@
 </div>
 <br>
 <div class="container">
-    <table class="table table-bordered table-striped">
+    <!-- <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th *ngFor="let h of tableHeaders">{{h}}</th>
             </tr>
         </thead>
         <tbody>
-            <!--Generating Product columns for every property from Product object -->
             <tr *ngFor="let p of products" (click)="selectProduct(p)">
                 <td *ngFor="let h of tableHeaders">{{p[h]}}</td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
+    <app-datagrid-component [DataSource]="products" (rowSelection)="selectProduct($event)"></app-datagrid-component>
 
 </div>
