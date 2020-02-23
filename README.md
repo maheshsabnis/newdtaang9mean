@@ -62,7 +62,29 @@ Agular Application Development
          1. Service define a public method that will be accessed by sender component to pass the data
          2. Service must define an EventEmitter<T> that will be subscribe by the receiver component to receive data when sender send it.   
 4. Routing
-   1. 
+   1. @angular/router
+      1. RouterModule
+         1. forRoot(routeTable)
+            1. Loading the Table at Application Level with all components
+         2. forChild(routeTable)
+            1. Load the route table for 'Lazy-Loaded' Modules
+      2. Routes
+         1. Used to define Route Table
+            1. Route
+               1. path: uri
+               2. component: Component Name
+               3. children: Child Route Table
+               4. redirectTo: Default routing if path not found
+               5. loadChildren: Lazy Loading
+               6. CanActivate: Router Guards
+      3. Router
+         1. Used for Routing Navigation based on events
+            1. navigate(['<PATH>', route parameters...]);
+      4. ActivatedRoute
+         1. Parameter Based Routing
+            1. Subscribing to parameter in route expression 
+      5. [routerLink] the attribute directive that accepts the routing path
+      6. <router-outlet></router-outlet>, the component that will render the HTML template of the component to be loading for a routing path
 5. Directives
    1. Three (3) typef of Directives
    2. Component Directive
