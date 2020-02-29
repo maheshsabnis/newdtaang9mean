@@ -16,6 +16,7 @@ import { AboutComponent } from './components/routingapp/app.about.component';
 import { ContactComponent } from './components/routingapp/app.contact.component';
 import { HomeComponent } from './components/routingapp/app.home.compontn';
 import { MainComponent } from './components/routingapp/app.main.component';
+import { SecureComponent } from './components/securecomponent/app.secure.component';
 
 
 // imports: of the type array, used to import and load stabdard angular module and other
@@ -36,13 +37,14 @@ import { MainComponent } from './components/routingapp/app.main.component';
     CatMasterComponent, PrdDetailsComponent,
     CatSenderComponent, PrdReceiverComponent,
     DataGridComponent, ColorDirective, HomeComponent, AboutComponent,
-    ContactComponent, MainComponent
+    ContactComponent, MainComponent,
+    SecureComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule,
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [MainComponent]
+  bootstrap: [SecureComponent]
 })
 export class AppModule { }
